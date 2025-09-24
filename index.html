@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siska Ainun Karnita - Profil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .earth-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #10b981 50%, #059669 75%, #064e3b 100%);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .stars {
+            background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                            radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                            radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                            radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.6), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+        }
+        
+        .planet-shadow {
+            box-shadow: inset -20px -20px 50px rgba(0,0,0,0.3);
+        }
+        
+        .admin-panel {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .admin-tab-active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .admin-tab-inactive {
+            border-color: transparent;
+            color: #6b7280;
+        }
+        
+        .admin-tab-inactive:hover {
+            color: #374151;
+            border-color: #d1d5db;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-900 stars overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-blue-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 earth-gradient rounded-full planet-shadow floating"></div>
+                    <span class="text-white font-bold text-xl">Siska Ainun Karnita</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-blue-300 hover:text-white transition-colors">Beranda</a>
+                    <a href="#about" class="text-blue-300 hover:text-white transition-colors">Tentang</a>
+                    <a href="#portfolio" class="text-blue-300 hover:text-white transition-colors">Pengalaman</a>
+                    <a href="#contact" class="text-blue-300 hover:text-white transition-colors">Kontak</a>
+                </div>
+                <button onclick="showAdminLogin()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors">
+                    Admin
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="text-center z-10">
+            <div class="mb-8">
+                <div class="relative w-40 h-40 mx-auto mb-6">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 via-green-500 to-blue-600 rounded-full p-1 floating">
+                        <div class="w-full h-full bg-gray-900 rounded-full p-1 flex items-center justify-center">
+                            <div class="w-full h-full earth-gradient rounded-full planet-shadow flex items-center justify-center overflow-hidden">
+                                <span class="text-6xl">
+                                  <img src="fto1.png" alt="Contoh Gambar" width="300"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+                    Siska Ainun Karnita
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-300 mb-8">
+                    Menjelajahi Dunia Digital dengan Kreativitas
+                </p>
+                <div class="flex justify-center space-x-4 flex-wrap gap-4">
+                    <a href="#portfolio" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-colors">
+                        Lihat Pengalaman
+                    </a>
+                    <button onclick="downloadCV()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full transition-colors flex items-center space-x-2">
+                        <span>📄</span>
+                        <span>Download CV</span>
+                    </button>
+                    <a href="#contact" class="border border-blue-500 text-blue-300 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-full transition-colors">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating planets -->
+        <div class="absolute top-20 left-10 w-16 h-16 bg-yellow-400 rounded-full floating opacity-70"></div>
+        <div class="absolute top-40 right-20 w-12 h-12 bg-red-500 rounded-full floating opacity-60" style="animation-delay: -1s;"></div>
+        <div class="absolute bottom-40 left-20 w-20 h-20 bg-purple-500 rounded-full floating opacity-50" style="animation-delay: -2s;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Tentang Saya</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                      Halo' Saya Siska Ainun Karnita, lahir di Sidoarjo pada 29 April 2007. Saya adalah seorang pelajar di SMK Krian 1 Sidoarjo jurusan Rekayasa Perangkat Lunak (RPL). 
+                      Saya pernah menjadi Bendahara PMR SMK Krian 1 serta Sekretaris Karang Taruna di lingkungan tempat tinggal. Saya juga telah melaksanakan PKL selama 6 bulan.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                     
+                      Dalam hal kemampuan, saya terbiasa mengoperasikan Microsoft Office serta mampu bekerja sama dengan baik dalam sebuah tim. Dengan semangat belajar yang tinggi,
+                       saya berkomitmen untuk terus mengembangkan diri agar bisa memberikan kontribusi positif, baik di sekolah maupun masyarakat.
+                      
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-blue-500/20">
+                            <h3 class="text-blue-300 font-semibold mb-2">Lokasi</h3>
+                            <p class="text-gray-300">Indonesia</p>
+                        </div>
+                        <div class="bg-gray-800/50 p-6 rounded-lg border border-blue-500/20">
+                            <h3 class="text-blue-300 font-semibold mb-2">Status</h3>
+                            <p class="text-gray-300">Tersedia untuk Proyek</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative w-80 h-80 mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-green-400 to-purple-500 rounded-full p-2 floating">
+                            <div class="w-full h-full bg-gray-900 rounded-full p-2 flex items-center justify-center">
+                                <div class="w-full h-full earth-gradient rounded-full planet-shadow relative flex items-center justify-center overflow-hidden">
+                                    <div class="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-black/30"></div>
+                                    <div class="relative text-white text-center z-10">
+                                        <div class="text-9xl mb-2">
+                                          <img src="ftocis.jpeg" alt="Contoh Gambar" width="300">
+                                        </div>
+                                        <p class="text-xl font-medium">Siska Ainun<br>Karnita</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-4 bg-gray-800/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">Pengalaman</h2>
+                <div class="w-24 h-1 bg-blue-500 mx-auto mb-4"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto">
+                    Koleksi karya dan proyek yang telah saya kerjakan dengan dedikasi dan kreativitas tinggi
+                </p>
+            </div>
+            
+            <div id="portfolioGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio items will be loaded here -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="showAddPortfolio()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors">
+                    + Tambah Portfolio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">Hubungi Saya</h2>
+            <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+            <p class="text-gray-300 text-lg mb-12">
+                Mari berkolaborasi dan ciptakan sesuatu yang luar biasa bersama!
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 p-8 rounded-lg border border-blue-500/20">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-blue-300 font-semibold mb-2">Email</h3>
+                    <p class="text-gray-300">siskakarnita84@gmail.com</p>
+                </div>
+                <div class="bg-gray-800/50 p-8 rounded-lg border border-blue-500/20">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-blue-300 font-semibold mb-2">Telepon</h3>
+                    <p class="text-gray-300">+62 896-8225-9340</p>
+                </div>
+                <div class="bg-gray-800/50 p-8 rounded-lg border border-blue-500/20">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-blue-300 font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-gray-300">linkedin.com/in/siska-ainun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 px-4 border-t border-blue-500/20">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <div class="w-6 h-6 earth-gradient rounded-full planet-shadow"></div>
+                <span class="text-white font-semibold">Siska Ainun Karnita</span>
+            </div>
+            <p class="text-gray-400">© 2024 Siska Ainun Karnita. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="admin-panel rounded-xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Login Admin</h3>
+            <form onsubmit="handleAdminLogin(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Username</label>
+                    <input type="text" id="adminUsername" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Password</label>
+                    <input type="password" id="adminPassword" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                </div>
+                <div class="flex space-x-4">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors">
+                        Login
+                    </button>
+                    <button type="button" onclick="hideAdminLogin()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg transition-colors">
+                        Batal
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+        <div class="admin-panel h-full overflow-y-auto">
+            <div class="max-w-7xl mx-auto p-8">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800">Panel Admin</h2>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-600">Selamat datang, Admin!</span>
+                        <button onclick="hideAdminPanel()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                            Keluar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Admin Tabs -->
+                <div class="mb-8">
+                    <div class="border-b border-gray-200">
+                        <nav class="-mb-px flex space-x-8">
+                            <button onclick="switchAdminTab('profile')" id="profileTab" class="admin-tab-active py-2 px-1 border-b-2 font-medium text-sm">
+                                Profil
+                            </button>
+                            <button onclick="switchAdminTab('portfolio')" id="portfolioTab" class="admin-tab-inactive py-2 px-1 border-b-2 font-medium text-sm">
+                                Portfolio
+                            </button>
+                            <button onclick="switchAdminTab('contact')" id="contactTab" class="admin-tab-inactive py-2 px-1 border-b-2 font-medium text-sm">
+                                Kontak
+                            </button>
+                            <button onclick="switchAdminTab('security')" id="securityTab" class="admin-tab-inactive py-2 px-1 border-b-2 font-medium text-sm">
+                                Keamanan
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Profile Management Tab -->
+                <div id="profileContent" class="admin-content">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Edit Profil</h3>
+                        <form onsubmit="handleProfileSubmit(event)" id="profileForm">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                    <input type="text" id="profileName" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Tagline</label>
+                                    <input type="text" id="profileTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-gray-700 font-medium mb-2">Tentang Saya (Paragraf 1)</label>
+                                    <textarea id="profileAbout" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-gray-700 font-medium mb-2">Tentang Saya (Paragraf 2)</label>
+                                    <textarea id="profileAbout2" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Lokasi</label>
+                                    <input type="text" id="profileLocation" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Status</label>
+                                    <input type="text" id="profileStatus" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                                    Simpan Profil
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Portfolio Management Tab -->
+                <div id="portfolioContent" class="admin-content hidden">
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Portfolio List -->
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Kelola Portfolio</h3>
+                            <div id="adminPortfolioList" class="space-y-4 max-h-96 overflow-y-auto">
+                                <!-- Portfolio items for admin will be loaded here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Add/Edit Portfolio Form -->
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h3 class="text-xl font-bold text-gray-800 mb-4" id="portfolioFormTitle">Tambah Portfolio</h3>
+                            <form onsubmit="handlePortfolioSubmit(event)" id="portfolioForm">
+                                <input type="hidden" id="editingPortfolioId">
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 font-medium mb-2">Judul</label>
+                                    <input type="text" id="portfolioTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 font-medium mb-2">Deskripsi</label>
+                                    <textarea id="portfolioDescription" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 font-medium mb-2">Kategori</label>
+                                    <select id="portfolioCategory" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                        <option value="">Pilih Kategori</option>
+                                        <option value="Web Development">Web Development</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Mobile App">Mobile App</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+                                <div class="mb-6">
+                                    <label class="block text-gray-700 font-medium mb-2">URL Proyek (opsional)</label>
+                                    <input type="url" id="portfolioUrl" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div class="flex space-x-4">
+                                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition-colors">
+                                        Simpan
+                                    </button>
+                                    <button type="button" onclick="resetPortfolioForm()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg transition-colors">
+                                        Reset
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Management Tab -->
+                <div id="contactContent" class="admin-content hidden">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Edit Informasi Kontak</h3>
+                        <form onsubmit="handleContactSubmit(event)" id="contactForm">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="contactEmail" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Telepon</label>
+                                    <input type="tel" id="contactPhone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-gray-700 font-medium mb-2">LinkedIn</label>
+                                    <input type="text" id="contactLinkedin" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                                    Simpan Kontak
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Security Management Tab -->
+                <div id="securityContent" class="admin-content hidden">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <h3 class="text-xl font-bold text-gray-800 mb-6">Keamanan Admin</h3>
+                        <form onsubmit="handlePasswordChange(event)" id="securityForm">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Username Saat Ini</label>
+                                    <input type="text" id="currentUsername" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-100" readonly>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Password Lama</label>
+                                    <input type="password" id="oldPassword" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Password Baru</label>
+                                    <input type="password" id="newPassword" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 font-medium mb-2">Konfirmasi Password Baru</label>
+                                    <input type="password" id="confirmPassword" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button type="submit" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors">
+                                    Ubah Password
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div class="mt-8 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                            <h4 class="font-semibold text-yellow-800 mb-2">Informasi Keamanan</h4>
+                            <ul class="text-sm text-yellow-700 space-y-1">
+                                <li>• Password minimal 6 karakter</li>
+                                <li>• Gunakan kombinasi huruf, angka, dan simbol</li>
+                                <li>• Jangan bagikan kredensial admin kepada siapapun</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Portfolio Modal (for public) -->
+    <div id="addPortfolioModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+        <div class="admin-panel rounded-xl p-8 max-w-md w-full mx-4">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Tambah Portfolio</h3>
+            <p class="text-gray-600 text-center mb-6">Untuk menambah portfolio, silakan login sebagai admin terlebih dahulu.</p>
+            <div class="flex space-x-4">
+                <button onclick="hideAddPortfolio(); showAdminLogin();" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg transition-colors">
+                    Login Admin
+                </button>
+                <button onclick="hideAddPortfolio()" class="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg transition-colors">
+                    Batal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let profileData = {
+            name: "Siska Ainun Karnita",
+            title: "Menjelajahi Dunia Digital dengan Kreativitas",
+            about: "Halo! Saya Siska Ainun Karnita, seorang profesional yang berdedikasi dalam dunia digital. Seperti planet bumi yang terus berputar dan berkembang, saya selalu berusaha untuk terus belajar dan berinovasi dalam setiap proyek yang saya kerjakan.",
+            about2: "Dengan pengalaman yang luas dan passion yang mendalam, saya berkomitmen untuk memberikan hasil terbaik dalam setiap kolaborasi dan proyek yang saya tangani.",
+            location: "Indonesia",
+            status: "Tersedia untuk Proyek",
+            email: "siska.ainun@email.com",
+            phone: "+62 812-3456-7890",
+            linkedin: "linkedin.com/in/siska-ainun"
+        };
+
+        let portfolioData = [
+            {
+                id: 1,
+                title: "Website E-Commerce Planet Store",
+                description: "Pengembangan website e-commerce dengan tema planet dan ruang angkasa, dilengkapi dengan sistem pembayaran dan manajemen produk.",
+                category: "Web Development",
+                url: "https://example.com/planet-store"
+            },
+            {
+                id: 2,
+                title: "Aplikasi Mobile Earth Explorer",
+                description: "Aplikasi mobile untuk eksplorasi bumi dengan fitur AR dan informasi geografis real-time.",
+                category: "Mobile App",
+                url: "https://example.com/earth-explorer"
+            },
+            {
+                id: 3,
+                title: "Branding Kampanye Save Earth",
+                description: "Desain identitas visual dan kampanye digital untuk program pelestarian lingkungan.",
+                category: "Design",
+                url: ""
+            }
+        ];
+
+        // Admin credentials (in real app, this would be server-side)
+        const adminCredentials = {
+            username: "admin",
+            password: "admin123"
+        };
+
+        let isAdminLoggedIn = false;
+        let editingPortfolioId = null;
+        let currentAdminTab = 'profile';
+
+        // Initialize portfolio display
+        function loadPortfolio() {
+            const portfolioGrid = document.getElementById('portfolioGrid');
+            portfolioGrid.innerHTML = '';
+
+            portfolioData.forEach(item => {
+                const portfolioCard = `
+                    <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                                    ${item.category}
+                                </span>
+                                <div class="w-8 h-8 earth-gradient rounded-full planet-shadow"></div>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                                ${item.title}
+                            </h3>
+                            <p class="text-gray-300 mb-4 leading-relaxed">
+                                ${item.description}
+                            </p>
+                            <div class="flex justify-between items-center">
+                                ${item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors">Lihat Proyek →</a>` : '<span class="text-gray-500">Proyek Internal</span>'}
+                                ${isAdminLoggedIn ? `
+                                    <div class="flex space-x-2">
+                                        <button onclick="editPortfolio(${item.id})" class="bg-yellow-600 hover:bg-yellow-700 text-white px-3 py-1 rounded text-sm transition-colors">
+                                            Edit
+                                        </button>
+                                        <button onclick="deletePortfolio(${item.id})" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm transition-colors">
+                                            Hapus
+                                        </button>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                portfolioGrid.innerHTML += portfolioCard;
+            });
+        }
+
+        // Admin functions
+        function showAdminLogin() {
+            document.getElementById('adminLoginModal').classList.remove('hidden');
+        }
+
+        function hideAdminLogin() {
+            document.getElementById('adminLoginModal').classList.add('hidden');
+            document.getElementById('adminUsername').value = '';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        function handleAdminLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('adminUsername').value;
+            const password = document.getElementById('adminPassword').value;
+
+            // Simple authentication (in real app, this would be server-side)
+            if (username === adminCredentials.username && password === adminCredentials.password) {
+                isAdminLoggedIn = true;
+                hideAdminLogin();
+                showAdminPanel();
+                loadPortfolio(); // Reload to show admin buttons
+                loadAdminPortfolioList();
+                loadAdminForms();
+            } else {
+                alert('Username atau password salah!');
+            }
+        }
+
+        function showAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('hidden');
+            switchAdminTab('profile'); // Default to profile tab
+        }
+
+        function hideAdminPanel() {
+            document.getElementById('adminPanel').classList.add('hidden');
+            isAdminLoggedIn = false;
+            loadPortfolio(); // Reload to hide admin buttons
+        }
+
+        // Admin tab switching
+        function switchAdminTab(tabName) {
+            currentAdminTab = tabName;
+            
+            // Hide all content
+            document.querySelectorAll('.admin-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('[id$="Tab"]').forEach(tab => {
+                tab.className = 'admin-tab-inactive py-2 px-1 border-b-2 font-medium text-sm';
+            });
+            
+            // Show selected content and activate tab
+            document.getElementById(tabName + 'Content').classList.remove('hidden');
+            document.getElementById(tabName + 'Tab').className = 'admin-tab-active py-2 px-1 border-b-2 font-medium text-sm';
+        }
+
+        // Load admin forms with current data
+        function loadAdminForms() {
+            // Load profile form
+            document.getElementById('profileName').value = profileData.name;
+            document.getElementById('profileTitle').value = profileData.title;
+            document.getElementById('profileAbout').value = profileData.about;
+            document.getElementById('profileAbout2').value = profileData.about2;
+            document.getElementById('profileLocation').value = profileData.location;
+            document.getElementById('profileStatus').value = profileData.status;
+            
+            // Load contact form
+            document.getElementById('contactEmail').value = profileData.email;
+            document.getElementById('contactPhone').value = profileData.phone;
+            document.getElementById('contactLinkedin').value = profileData.linkedin;
+            
+            // Load security form
+            document.getElementById('currentUsername').value = adminCredentials.username;
+        }
+
+        // Handle profile form submission
+        function handleProfileSubmit(event) {
+            event.preventDefault();
+            
+            profileData.name = document.getElementById('profileName').value;
+            profileData.title = document.getElementById('profileTitle').value;
+            profileData.about = document.getElementById('profileAbout').value;
+            profileData.about2 = document.getElementById('profileAbout2').value;
+            profileData.location = document.getElementById('profileLocation').value;
+            profileData.status = document.getElementById('profileStatus').value;
+            
+            updateProfileDisplay();
+            alert('Profil berhasil diperbarui!');
+        }
+
+        // Handle contact form submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            profileData.email = document.getElementById('contactEmail').value;
+            profileData.phone = document.getElementById('contactPhone').value;
+            profileData.linkedin = document.getElementById('contactLinkedin').value;
+            
+            updateContactDisplay();
+            alert('Informasi kontak berhasil diperbarui!');
+        }
+
+        // Handle password change
+        function handlePasswordChange(event) {
+            event.preventDefault();
+            
+            const oldPassword = document.getElementById('oldPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (oldPassword !== adminCredentials.password) {
+                alert('Password lama tidak sesuai!');
+                return;
+            }
+            
+            if (newPassword.length < 6) {
+                alert('Password baru minimal 6 karakter!');
+                return;
+            }
+            
+            if (newPassword !== confirmPassword) {
+                alert('Konfirmasi password tidak sesuai!');
+                return;
+            }
+            
+            adminCredentials.password = newPassword;
+            document.getElementById('securityForm').reset();
+            document.getElementById('currentUsername').value = adminCredentials.username;
+            alert('Password berhasil diubah!');
+        }
+
+        // Update profile display on website
+        function updateProfileDisplay() {
+            // Update navigation
+            document.querySelector('nav .font-bold').textContent = profileData.name;
+            
+            // Update hero section
+            document.querySelector('#home h1').textContent = profileData.name;
+            document.querySelector('#home .text-blue-300').textContent = profileData.title;
+            
+            // Update about section
+            const aboutTexts = document.querySelectorAll('#about .text-gray-300');
+            aboutTexts[0].textContent = profileData.about;
+            aboutTexts[1].textContent = profileData.about2;
+            
+            // Update about info boxes
+            const infoBoxes = document.querySelectorAll('#about .bg-gray-800\\/50 p');
+            infoBoxes[1].textContent = profileData.location;
+            infoBoxes[3].textContent = profileData.status;
+            
+            // Update footer
+            document.querySelector('footer .font-semibold').textContent = profileData.name;
+        }
+
+        // Update contact display on website
+        function updateContactDisplay() {
+            const contactCards = document.querySelectorAll('#contact .text-gray-300');
+            contactCards[0].textContent = profileData.email;
+            contactCards[1].textContent = profileData.phone;
+            contactCards[2].textContent = profileData.linkedin;
+        }
+
+        function loadAdminPortfolioList() {
+            const adminList = document.getElementById('adminPortfolioList');
+            adminList.innerHTML = '';
+
+            portfolioData.forEach(item => {
+                const listItem = `
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <div class="flex justify-between items-start">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800">${item.title}</h4>
+                                <p class="text-sm text-gray-600 mt-1">${item.category}</p>
+                                <p class="text-sm text-gray-500 mt-2">${item.description.substring(0, 100)}...</p>
+                            </div>
+                            <div class="flex space-x-2 ml-4">
+                                <button onclick="editPortfolio(${item.id})" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm transition-colors">
+                                    Edit
+                                </button>
+                                <button onclick="deletePortfolio(${item.id})" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm transition-colors">
+                                    Hapus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                adminList.innerHTML += listItem;
+            });
+        }
+
+        function showAddPortfolio() {
+            if (!isAdminLoggedIn) {
+                document.getElementById('addPortfolioModal').classList.remove('hidden');
+            } else {
+                resetPortfolioForm();
+            }
+        }
+
+        function hideAddPortfolio() {
+            document.getElementById('addPortfolioModal').classList.add('hidden');
+        }
+
+        function handlePortfolioSubmit(event) {
+            event.preventDefault();
+            
+            const title = document.getElementById('portfolioTitle').value;
+            const description = document.getElementById('portfolioDescription').value;
+            const category = document.getElementById('portfolioCategory').value;
+            const url = document.getElementById('portfolioUrl').value;
+            const editingId = document.getElementById('editingPortfolioId').value;
+
+            if (editingId) {
+                // Edit existing portfolio
+                const index = portfolioData.findIndex(item => item.id == editingId);
+                if (index !== -1) {
+                    portfolioData[index] = {
+                        ...portfolioData[index],
+                        title,
+                        description,
+                        category,
+                        url
+                    };
+                }
+            } else {
+                // Add new portfolio
+                const newId = Math.max(...portfolioData.map(item => item.id)) + 1;
+                portfolioData.push({
+                    id: newId,
+                    title,
+                    description,
+                    category,
+                    url
+                });
+            }
+
+            resetPortfolioForm();
+            loadPortfolio();
+            loadAdminPortfolioList();
+            alert(editingId ? 'Portfolio berhasil diperbarui!' : 'Portfolio berhasil ditambahkan!');
+        }
+
+        function editPortfolio(id) {
+            const item = portfolioData.find(portfolio => portfolio.id === id);
+            if (item) {
+                document.getElementById('editingPortfolioId').value = id;
+                document.getElementById('portfolioTitle').value = item.title;
+                document.getElementById('portfolioDescription').value = item.description;
+                document.getElementById('portfolioCategory').value = item.category;
+                document.getElementById('portfolioUrl').value = item.url;
+                document.getElementById('portfolioFormTitle').textContent = 'Edit Portfolio';
+                
+                if (!isAdminLoggedIn) {
+                    showAdminPanel();
+                }
+            }
+        }
+
+        function deletePortfolio(id) {
+            if (confirm('Apakah Anda yakin ingin menghapus portfolio ini?')) {
+                portfolioData = portfolioData.filter(item => item.id !== id);
+                loadPortfolio();
+                loadAdminPortfolioList();
+                alert('Portfolio berhasil dihapus!');
+            }
+        }
+
+        function resetPortfolioForm() {
+            document.getElementById('portfolioForm').reset();
+            document.getElementById('editingPortfolioId').value = '';
+            document.getElementById('portfolioFormTitle').textContent = 'Tambah Portfolio';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Download CV function
+        function downloadCV() {
+            // Open Google Drive link directly
+            const driveUrl = 'https://drive.google.com/file/d/13U7ik4-h-WKVH1n1kxjrIPO7qKXID_oF/view?usp=drive_link';
+            
+            // Open CV link in new tab
+            window.open(driveUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPortfolio();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'983e6ba727fbf90a',t:'MTc1ODY3NjQyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
